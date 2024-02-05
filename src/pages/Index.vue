@@ -32,7 +32,20 @@
     </div>
   </div>
   <div class="about-section">
-  
+    <p class="about">About the Conference</p>
+    <div class="details">
+      <div class="topics">
+        <div v-for="(item, key) in ['', '', '', '']" :key="key" class="topic-container">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="speakers-section">
+    <p class="heading">Speakers</p>
+    <div>
+    
+    </div>
   </div>
 </div>
 </template>
