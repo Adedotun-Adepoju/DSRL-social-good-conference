@@ -1,0 +1,90 @@
+.main-container {
+  background-color: #10121E;
+  padding: 50px 250px 50px 100px;
+  .navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    .conference-logo {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      .rectangle {
+        background-color: white;
+        padding-bottom: 0px;
+        padding: 12px 5px 0px 5px;
+        p {
+          font-size: 25px;
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+      }
+
+      .text {
+        p {
+          color: white;
+          margin-bottom: 2px;
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .nav-items {
+      width: 60%;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 8px;
+      .nav-item {
+        color: white;
+        font-weight: bold;
+        font-size: 25px;
+        cursor: pointer;
+      }
+
+      .nav-item:hover{
+        color: #FDC030;
+      }
+    }
+  }
+
+  .title-section {
+    margin-top: 100px;
+    margin-left: 20%;
+    margin-right: 150px;
+    // margin: 0 auto 0 auto;
+    // text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 30px
+    ;
+    .left-divider {
+      color: #FDC030;
+      width: 10px;
+      // height: 586px;   
+      background-color: #FDC030;; 
+      border: 1px solid #FDC030;;
+    }
+    .body{
+      width: fit-content;
+      .title {
+        color: white;
+        font-weight: bold;
+        font-size: 45px;
+        text-transform: uppercase;
+      }
+      .sub-title {
+        color: white;
+        font-size: 30px;
+      }
+    }
+    .right-divider {
+      color: #FDC030;
+      width: 10px;
+      // height: 586px;   
+      background-color: #FDC030;; 
+      border: 1px solid #FDC030;;
+    }
+  }
+}
