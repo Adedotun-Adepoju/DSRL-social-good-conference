@@ -1,15 +1,75 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
-  </q-page>
+<div class="main-container">
+  <div class="navigation">
+    <div class="conference-logo">
+      <div class="rectangle">
+        <p>Data</p>
+      </div>
+      <div class="text">
+        <p>Science</p>
+        <p>Conference</p>
+      </div>
+    </div>
+    <div class="nav-items">
+      <p
+        v-for="(item, key) in navItems"
+        :key="key"
+        class="nav-item"
+        @click="navItemClick(item)"
+      >
+        {{ item.name }}
+      </p>
+    </div>
+  </div>
+  <div class="title-section">
+    <div class="left-divider">
+    </div>
+    <div class="body">
+      <p class="title">Data Science For Social Good Conference</p>
+      <p class="sub-title">May 20, 2024 | Morgan State University</p>
+    </div>
+    <div class="right-divider">
+    </div>
+  </div>
+  <div class="about-section">
+  
+  </div>
+</div>
 </template>
 
 <script>
 export default {
-  name: 'PageIndex'
+  name: 'PageIndex',
+  data() {
+    return {
+      navItems: [
+        {
+          name: "Home",
+          to: "/"
+        },
+        {
+          name: "Speakers",
+          to: ""
+        },
+        {
+          name: "Agenda",
+          to: ""
+        },
+        {
+          name: "Contact Us",
+          to: "/"
+        }
+      ]
+    }
+  },
+  methods: {
+    navItemClick(item){
+
+    }
+  }
 }
 </script>
+
+<style lang="scss" scoped>
+@import "./index.scss"
+</style>
