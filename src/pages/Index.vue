@@ -32,16 +32,52 @@
     </div>
   </div>
   <div class="about-section">
-  
+    <div class="topics">
+      <div v-for="(item, key) in topics" :key="key" class="topic-container">
+        <p class="number">{{ key + 1 }}</p>
+        <p class="topic">{{ item.name }}</p>
+      </div>
+    </div>
+    <div class="details">
+      <p class="about">About the Conference</p>  
+      <p class="description">Details to be added...</p>
+    </div>
+  </div>
+  <div class="speakers-section" id="speakers">
+    <p class="heading">Speakers</p>
+    <div class="speaker-tiles">
+      <template v-for="(person, key) in speakers">
+        <SpeakerCard
+          :key="key"
+          :name="person.name"
+          :title="person.title"
+          :image="person.image_link"
+          :leftMargin="person.left_margin"
+          class="speaker-card"
+        />
+      </template>
+    </div>
+  </div>
+  <div class="agenda-section" id="agenda">
+    <p class="heading">Agenda</p>
+    <p class="body">To be confirmed....</p>
   </div>
 </div>
 </template>
 
 <script>
+import { speakers } from "src/data/constants"
+import SpeakerCard from "src/components/speakers-card/speakers.vue"
+import One from "src/components/svgs/one.vue"
 export default {
   name: 'PageIndex',
+  components: {
+    SpeakerCard,
+  },
+
   data() {
     return {
+      speakers: speakers,
       navItems: [
         {
           name: "Home",
@@ -59,12 +95,29 @@ export default {
           name: "Contact Us",
           to: "/"
         }
+      ],
+      topics: [
+        {
+          name: "Violence Prevention"
+        },
+        {
+          name: "Homelessness"
+        },
+        {
+          name: "Educational Equity"
+        },
+        {
+          name: "Reentry"
+        }
       ]
     }
   },
   methods: {
     navItemClick(item){
-
+      const element = document.getElementById(item.name.toLowerCase())
+      if(element) {
+        element.scrollIntoView({ behavior: "smooth" })
+      }
     }
   }
 }
