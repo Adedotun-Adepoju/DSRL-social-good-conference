@@ -1,6 +1,6 @@
 .main-container {
   background-color: #10121E;
-  padding: 50px 250px 50px 250px;
+  padding: 50px 20% 50px 20%;
   .navigation {
     display: flex;
     flex-direction: row;
@@ -83,8 +83,8 @@
       color: #FDC030;
       width: 10px;
       // height: 586px;   
-      background-color: #FDC030;; 
-      border: 1px solid #FDC030;;
+      background-color: #FDC030;
+      border: 1px solid #FDC030;
     }
   }
 
@@ -102,7 +102,7 @@
         display: flex;
         width: 700px;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-between;
         .topic-container {
           width: 246px;
           height: 246px;
@@ -122,5 +122,23 @@
       font-weight: bold;
       text-align: center;
     }
+
+    .speaker-tiles {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 60px;
+      // justify-content: flex-end;
+      // gap: 15%;
+  
+      .speaker-card {
+        padding: 0px;
+        flex-basis: 25%;
+        margin-bottom: 90px;
+      }
+    }
+  }
+
+  .agenda-section {
+    
   }
 }

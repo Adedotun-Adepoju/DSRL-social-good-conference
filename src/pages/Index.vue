@@ -43,18 +43,37 @@
   </div>
   <div class="speakers-section">
     <p class="heading">Speakers</p>
-    <div>
-    
+    <div class="speaker-tiles">
+      <template v-for="(person, key) in speakers">
+        <SpeakerCard
+          :key="key"
+          :name="person.name"
+          :title="person.title"
+          :image="person.image_link"
+          :leftMargin="person.left_margin"
+          class="speaker-card"
+        />
+      </template>
     </div>
+  </div>
+  <div class="agenda-section">
+    <p class="heading">Agenda</p>
   </div>
 </div>
 </template>
 
 <script>
+import { speakers } from "src/data/constants"
+import SpeakerCard from "src/components/speakers-card/speakers.vue"
 export default {
   name: 'PageIndex',
+  components: {
+    SpeakerCard
+  },
+
   data() {
     return {
+      speakers: speakers,
       navItems: [
         {
           name: "Home",
@@ -72,7 +91,7 @@ export default {
           name: "Contact Us",
           to: "/"
         }
-      ]
+      ],
     }
   },
   methods: {
