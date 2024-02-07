@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="menu-icon">
-      <q-icon name="menu" size="s" class="icon" color="white">
+      <q-icon name="menu" size="md" class="icon" color="white">
         <q-menu>
           <q-list>
             <q-item clickable v-close-popup v-for="(item, keys) in navItems" :key="keys" @click="navItemClick(item)">
