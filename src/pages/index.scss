@@ -33,6 +33,10 @@
       }
     }
 
+    .menu-icon {
+      display: none;
+    }
+
     .nav-items {
       width: 60%;
       display: flex;
@@ -177,6 +181,40 @@
     .body {
       color: white;
       text-align: center;
+    }
+  }
+}
+
+// mobile-view
+@media (max-width: 599px) {
+  .main-container {
+    padding: 20px 3% 0.5% 30px;
+
+    .navigation {
+      .conference-logo {
+        gap: 3px;
+        max-height: 15px;
+        .rectangle {
+          max-height: 30px;
+          padding: 4px 4px 0px 4px;
+
+          p {
+            font-size: 1vw;
+          }
+        }
+        .text {
+          p {
+            font-size: 1vw;
+          }
+        }
+      }
+      .menu-icon {
+        display: block;
+        padding: 0px 10px 5px 2px;
+      }
+      .nav-items {
+        display: none;
+      }
     }
   }
 }
