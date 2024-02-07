@@ -39,3 +39,17 @@
   }
   // border-radius: 50%;
 }
+
+@media (max-width: 599px) {
+  .main-container {
+
+    .speaker-wrapper {
+      .circular-image {
+        max-width: 200px;
+        max-height: 200px;
+        width: 140px;
+        height: 140px;
+      }
+    }
+  }
+}

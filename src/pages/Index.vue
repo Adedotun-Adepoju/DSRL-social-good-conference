@@ -10,6 +10,17 @@
         <p>Conference</p>
       </div>
     </div>
+    <div class="menu-icon">
+      <q-icon name="menu" size="md" class="icon" color="white">
+        <q-menu>
+          <q-list>
+            <q-item clickable v-close-popup v-for="(item, keys) in navItems" :key="keys" @click="navItemClick(item)">
+              <q-item-section>{{ item.name }}</q-item-section>
+            </q-item>
+          </q-list>
+        </q-menu>  
+      </q-icon>
+    </div>
     <div class="nav-items">
       <p
         v-for="(item, key) in navItems"
@@ -68,7 +79,6 @@
 <script>
 import { speakers } from "src/data/constants"
 import SpeakerCard from "src/components/speakers-card/speakers.vue"
-import One from "src/components/svgs/one.vue"
 export default {
   name: 'PageIndex',
   components: {
