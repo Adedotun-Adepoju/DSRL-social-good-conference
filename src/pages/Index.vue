@@ -68,7 +68,6 @@
 <script>
 import { speakers } from "src/data/constants"
 import SpeakerCard from "src/components/speakers-card/speakers.vue"
-import One from "src/components/svgs/one.vue"
 export default {
   name: 'PageIndex',
   components: {
