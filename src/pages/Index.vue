@@ -118,6 +118,10 @@ export default {
           to: ""
         },
         {
+          name: "Committee",
+          to: ""
+        },
+        {
           name: "Contact Us",
           to: "/"
         }

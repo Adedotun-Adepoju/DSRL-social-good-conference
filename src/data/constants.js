@@ -1,50 +1,50 @@
 export const speakers = [
   {
-    name: "Speaker 1",
-    title: "Role",
-    image_link: "img/people/dr_chouchane.png",
+    name: "Ijeoma Opara",
+    title: "Yale University School of Public Health",
+    // image_link: "img/people/dr_chouchane.png",
     // left_margin: "-40px"
   },
   {
-    name: "Speaker 2",
-    title: "Role",
+    name: "Laura Nissen",
+    title: "Foresight/ Futures Strategist, Portland State University",
     // image_link: "img/people/dotun.png",
     left_margin: "-5px"
   },
   {
-    name: "Speaker 3",
-    title: "Role",
+    name: "Danielle Littman",
+    title: "Gaming for social good (third spaces)",
     // image_link: "img/people/dotun.png",
     left_margin: "-5px"
   },
   {
-    name: "Speaker 4",
-    title: "Role",
+    name: "La’Tesha Sampson",
+    title: "Masters of Public Administration, Seton Hall University",
     // image_link: "img/people/dotun.png",
     left_margin: "-5px"
   },
   {
-    name: "Speaker 5",
-    title: "Role",
+    name: "Dr. DuWayne Battle",
+    title: "Professor and Assistant Dean, The State University of New Jersey ",
     // image_link: "img/people/dotun.png",
     left_margin: "-5px"
   },
   {
-    name: "Speaker 6",
-    title: "Role",
+    name: "Dr. Jonathan Alschech",
+    title: "Smith College",
     // image_link: "img/people/dotun.png",
     left_margin: "-5px"
   },
-  {
-    name: "Speaker 7",
-    title: "Role",
-    // image_link: "img/people/dotun.png",
-    left_margin: "-5px"
-  },
-  {
-    name: "Speaker 8",
-    title: "Role",
-    // image_link: "img/people/dotun.png",
-    left_margin: "-5px"
-  }
+  // {
+  //   name: "Speaker 7",
+  //   title: "Role",
+  //   // image_link: "img/people/dotun.png",
+  //   left_margin: "-5px"
+  // },
+  // {
+  //   name: "Speaker 8",
+  //   title: "Role",
+  //   // image_link: "img/people/dotun.png",
+  //   left_margin: "-5px"
+  // }
 ]
