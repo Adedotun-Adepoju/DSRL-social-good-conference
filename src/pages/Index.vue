@@ -36,7 +36,7 @@
     <div class="left-divider">
     </div>
     <div class="body">
-      <p class="title">Data Science For Social Good Conference</p>
+      <p class="title">Data Science For Social Work Conference</p>
       <p class="sub-title">Location: 212 University Student Center, Morgan State University </p>
       <!-- <p class="sub-title">1700 East Cold Spring Lane, Baltimore, Maryland 21251</p> -->
       <p class="date">Date: May 03, 2024</p>
@@ -89,11 +89,33 @@
       <p class="sub">{{ item.sub }}</p>
     </div>
   </div>
+  <div class="sponsors-section">
+    <p class="heading">Our Sponsors</p>
+    <div class="info">
+      <div 
+        v-for="(item, index) in sponsors" 
+        :key="index" 
+        class="sponsors"
+        @click="goToSponsorPage(item.url)"
+      >
+        <img :src="item.img_link" class="logo"/>
+      </div>
+    </div>
+  </div>
+  <div class="contacts-section">
+    <p class="heading">Contact Us</p>
+    <div class="contact-board">
+      <div v-for="(contact, index) in contacts" :key="index" class="contact">
+        <p class="name">Name: {{ contact.name }}</p>
+        <p class="email">Email: {{ contact.email }}</p>
+      </div>
+    </div>
+  </div>
 </div>
 </template>
 
 <script>
-import { speakers } from "src/data/constants"
+import { speakers, sponsors } from "src/data/constants"
 import SpeakerCard from "src/components/speakers-card/speakers.vue"
 export default {
   name: 'PageIndex',
@@ -104,6 +126,7 @@ export default {
   data() {
     return {
       speakers: speakers,
+      sponsors: sponsors,
       navItems: [
         {
           name: "Home",
@@ -200,6 +223,12 @@ export default {
           title: " Closing Remarks and Acknowledgments",
           sub: "Speaker 5"
         }
+      ],
+      contacts: [
+        {
+          name: "Radhouane Chouchane",
+          email: "radwan.shushane@morgan.edu"
+        }
       ]
     }
   },
@@ -209,7 +238,10 @@ export default {
       if(element) {
         element.scrollIntoView({ behavior: "smooth" })
       }
-    }
+    },
+    goToSponsorPage(url) {
+      window.open(url);
+    },
   }
 }
 </script>

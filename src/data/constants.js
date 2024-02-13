@@ -48,3 +48,16 @@ export const speakers = [
   //   left_margin: "-5px"
   // }
 ]
+
+export const sponsors = [
+  {
+    name: "Data Science Research Lab",
+    img_link: "img/people/lab-logo.jpeg",
+    url: "https://msu-dsrl-website.vercel.app/#/"
+  },
+  {
+    name: "Morgan State University",
+    img_link: "img/people/msu.png",
+    url: "https://www.morgan.edu/"
+  }
+]
