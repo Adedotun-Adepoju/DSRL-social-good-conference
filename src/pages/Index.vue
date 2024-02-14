@@ -105,8 +105,11 @@
     <p class="heading">Contact Us</p>
     <div class="contact-board">
       <div v-for="(contact, index) in contacts" :key="index" class="contact">
-        <p class="name">Name: {{ contact.name }}</p>
-        <p class="email">Email: {{ contact.email }}</p>
+        <p class="name">{{ contact.name }}</p>
+        <p class="description">Coordinator</p>
+        <a href="mailto:radwan.shushane@morgan.edu" target="_blank" rel="noopener noreferrer">
+          <q-icon name="email" size="sm" color="white"/>
+        </a>
       </div>
     </div>
   </div>
@@ -238,7 +241,7 @@ export default {
         {
           name: "Radhouane Chouchane",
           email: "radwan.shushane@morgan.edu"
-        }
+        },
       ]
     }
   },
