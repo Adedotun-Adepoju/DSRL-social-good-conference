@@ -1,0 +1,145 @@
+.main-container {
+  // background-color: #10121E;
+  background-color: BLACK;
+  padding: 50px 20% 50px 20%;
+  .navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    .conference-logo {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      .rectangle {
+        background-color: white;
+        padding-bottom: 0px;
+        padding: 12px 5px 0px 5px;
+        p {
+          font-size: 1vw;
+          text-transform: uppercase;
+          font-weight: bold;
+          margin: 0px;
+        }
+      }
+
+      .text {
+        p {
+          color: white;
+          margin-bottom: 2px;
+          font-size: 0.8vw;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .menu-icon {
+      display: none;
+    }
+
+    .nav-items {
+      width: 60%;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 8px;
+      .nav-item {
+        color: white;
+        font-weight: bold;
+        font-size: 1vw;
+        cursor: pointer;
+      }
+
+      .nav-item:hover{
+        color: #FDC030;
+      }
+
+      .active-tab {
+        color:#FDC030;;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .body {
+    margin-top: 100px;
+    .heading {
+      color: white;
+      font-size: 30px;
+      text-align: center;
+    }
+    .title {
+      .section-header {
+        color: #FDC030;
+        font-size: 20px;
+        margin-top: 40px;
+      }
+      .list {
+        .chair {
+          color: white;
+          font-size: 20px;
+          margin-top: 20px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+// mobile-view
+@media (max-width: 599px) {
+  .main-container {
+    padding: 20px 3% 0.5% 30px;
+
+    .navigation {
+      .conference-logo {
+        gap: 3px;
+        max-height: 25px;
+        .rectangle {
+          max-height: 30px;
+          padding: 5px 5px 0px 4px;
+
+          p {
+            font-size: 8px;
+          }
+        }
+        .text {
+          p {
+            font-size: 8px;
+          }
+        }
+      }
+      .menu-icon {
+        display: block;
+        padding: 0px 10px 5px 2px;
+      }
+      .nav-items {
+        display: none;
+      }
+    }
+
+    .body {
+      margin-top: 50px;
+      .heading {
+        color: white;
+        font-size: 30px;
+        text-align: center;
+      }
+      .title {
+        .section-header {
+          color: #FDC030;
+          font-size: 20px;
+          margin-top: 40px;
+        }
+        .list {
+          .chair {
+            color: white;
+            font-size: 15px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}

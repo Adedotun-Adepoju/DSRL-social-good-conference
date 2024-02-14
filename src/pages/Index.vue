@@ -25,7 +25,7 @@
       <p
         v-for="(item, key) in navItems"
         :key="key"
-        class="nav-item"
+        :class="`nav-item ${item.name == activeTab ? 'active-tab' : ''}`"
         @click="navItemClick(item)"
       >
         {{ item.name }}
@@ -47,7 +47,7 @@
   <div class="about-section">
     <div class="topics">
       <div v-for="(item, key) in topics" :key="key" class="topic-container">
-        <ul v-for="(topic,index) in item" :key="index">
+        <ul v-for="(topic,index) in item" :key="'a' + index">
           <li class="topic">{{ topic }}</li>
         </ul>
       </div>
@@ -65,7 +65,6 @@
           :key="key"
           :name="person.name"
           :title="person.title"
-          :image="person.image_link"
           :leftMargin="person.left_margin"
           class="speaker-card"
         />
@@ -82,7 +81,7 @@
       <p class="sub">{{ item.sub }}</p>
     </div>
     <p class="session">Afternoon Session</p>
-    <div v-for="(item, index) in afternoonAgenda" :key="index" class="schedule">
+    <div v-for="(item, index) in afternoonAgenda" :key="'a' + index" class="schedule">
       <p class="time">{{ item.time }}</p>
       <hr>
       <p class="title">{{ item.title }}</p>
@@ -102,7 +101,7 @@
       </div>
     </div>
   </div>
-  <div class="contacts-section">
+  <div class="contacts-section" id="contact">
     <p class="heading">Contact Us</p>
     <div class="contact-board">
       <div v-for="(contact, index) in contacts" :key="index" class="contact">
@@ -125,28 +124,39 @@ export default {
 
   data() {
     return {
+      activeTab: "Home",
       speakers: speakers,
       sponsors: sponsors,
       navItems: [
         {
           name: "Home",
-          to: "/"
+          slug: "home",
+          to: "/",
+          redirect: false
         },
         {
           name: "Speakers",
-          to: ""
+          slug: "speakers",
+          to: "",
+          redirect: false
         },
         {
           name: "Agenda",
-          to: ""
+          slug: "agenda",
+          to: "",
+          redirect: false
         },
         {
           name: "Committee",
-          to: ""
+          slug: "committee",
+          to: "/committee",
+          redirect: true
         },
         {
           name: "Contact Us",
-          to: "/"
+          slug: "contact",
+          to: "/",
+          redirect: false
         }
       ],
       topics: [
@@ -234,9 +244,13 @@ export default {
   },
   methods: {
     navItemClick(item){
-      const element = document.getElementById(item.name.toLowerCase())
-      if(element) {
-        element.scrollIntoView({ behavior: "smooth" })
+      if(item.redirect){
+        this.$router.push('/committee')
+      } else{
+        const element = document.getElementById(item.slug.toLowerCase())
+        if(element) {
+          element.scrollIntoView({ behavior: "smooth" })
+        }
       }
     },
     goToSponsorPage(url) {

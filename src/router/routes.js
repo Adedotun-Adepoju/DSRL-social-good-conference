@@ -1,8 +1,14 @@
-
+import Committee from "src/pages/committee/Committee.vue"
 const routes = [
   {
     path: '/',
     component: () => import('pages/Index.vue'),
+    children: []
+  },
+  {
+    path: '/committee',
+    component: Committee,
+    name: "committee",
     children: []
   },
 

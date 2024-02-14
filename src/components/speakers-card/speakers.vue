@@ -26,11 +26,11 @@ export default {
     },
     image: {
       type: String,
-      required: true
+      required: false
     },
    leftMargin: {
     type: String,
-    required: true
+    required: false
    }
   },
   data() {

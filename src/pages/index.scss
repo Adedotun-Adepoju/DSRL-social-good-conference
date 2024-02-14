@@ -52,6 +52,11 @@
       .nav-item:hover{
         color: #FDC030;
       }
+
+      .active-tab {
+        color:#FDC030;;
+        font-weight: bold;
+      }
     }
   }
 
@@ -248,7 +253,7 @@
     .contact-board {
       border-radius: 10px;
       .contact {
-        border-right: 3px solid white;
+        // border-right: 3px solid white;
         width: 30%;
         .name {
           color: white;
