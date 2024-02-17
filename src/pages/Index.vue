@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="menu-icon">
-      <q-icon name="menu" size="md" class="icon" color="white">
+      <q-icon name="menu" size="md" class="icon" color="black">
         <q-menu>
           <q-list>
             <q-item clickable v-close-popup v-for="(item, keys) in navItems" :key="keys" @click="navItemClick(item)">
@@ -33,15 +33,11 @@
     </div>
   </div>
   <div class="title-section">
-    <div class="left-divider">
-    </div>
     <div class="body">
       <p class="title">Data Science For Social Work Conference</p>
-      <p class="sub-title">Location: 212 University Student Center, Morgan State University </p>
+      <p class="sub-title"><span>Morgan State University</span> @ 212 University Student Center</p>
       <!-- <p class="sub-title">1700 East Cold Spring Lane, Baltimore, Maryland 21251</p> -->
-      <p class="date">Date: May 03, 2024</p>
-    </div>
-    <div class="right-divider">
+      <p class="date">May 3, 2024</p>
     </div>
   </div>
   <div class="about-section">
@@ -53,7 +49,7 @@
       </div>
     </div>
     <div class="details">
-      <p class="about">About the Conference</p>  
+      <!-- <p class="about">About the Conference</p>   -->
       <p class="description">Practitioner/Scholar Collaboration to Localize Addressing Social Problems, mainly with the help of Data Science, in the NJ Metro and the Baltimore/DC area.</p>
     </div>
   </div>
@@ -73,23 +69,38 @@
   </div>
   <div class="agenda-section" id="agenda">
     <p class="heading">Agenda</p>
-    <p class="session">Morning Session</p>
-    <div v-for="(item, index) in morningAgenda" :key="index" class="schedule">
-      <p class="time">{{ item.time }}</p>
-      <hr>
-      <p class="title">{{ item.title }}</p>
-      <p class="sub">{{ item.sub }}</p>
+    <div class="program">
+      <div class="session-container">
+        <p class="session">Morning Session</p>
+        <div 
+          v-for="(item, index) in morningAgenda" 
+          :key="index" 
+          :class="`schedule ${index % 2 == 0 ? 'background' : ''}`">
+          <p class="time">{{ item.time }}</p>
+          <!-- <hr> -->
+          <div class="item">
+            <p class="title">{{ item.title }}</p>
+            <p class="sub">{{ item.sub }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="session-container">
+        <p class="session">Afternoon Session</p>
+        <div 
+          v-for="(item, index) in afternoonAgenda" 
+          :key="'a' + index" 
+          :class="`schedule ${index % 2 == 0 ? 'background' : ''}`">
+          <p class="time">{{ item.time }}</p>
+          <div class="item">
+            <p class="title">{{ item.title }}</p>
+            <p class="sub">{{ item.sub }}</p>
+          </div>
+        </div>
+      </div>
+        </div>
     </div>
-    <p class="session">Afternoon Session</p>
-    <div v-for="(item, index) in afternoonAgenda" :key="'a' + index" class="schedule">
-      <p class="time">{{ item.time }}</p>
-      <hr>
-      <p class="title">{{ item.title }}</p>
-      <p class="sub">{{ item.sub }}</p>
-    </div>
-  </div>
   <div class="sponsors-section">
-    <p class="heading">Our Sponsors</p>
+    <p class="heading">Sponsors</p>
     <div class="info">
       <div 
         v-for="(item, index) in sponsors" 
@@ -97,7 +108,10 @@
         class="sponsors"
         @click="goToSponsorPage(item.url)"
       >
-        <img :src="item.img_link" class="logo"/>
+        <img :src="item.img_link" 
+          class="logo"
+          :style="{ marginTop: `${item.marginTop}` }"
+        />
       </div>
     </div>
   </div>
@@ -132,8 +146,8 @@ export default {
       sponsors: sponsors,
       navItems: [
         {
-          name: "Home",
-          slug: "home",
+          name: "About",
+          slug: "about",
           to: "/",
           redirect: false
         },
@@ -144,7 +158,7 @@ export default {
           redirect: false
         },
         {
-          name: "Agenda",
+          name: "Program",
           slug: "agenda",
           to: "",
           redirect: false
@@ -156,11 +170,17 @@ export default {
           redirect: true
         },
         {
-          name: "Contact Us",
-          slug: "contact",
-          to: "/",
-          redirect: false
-        }
+          name: "Register",
+          slug: "register",
+          to: "/committee",
+          redirect: true
+        },
+        // {
+        //   name: "Contact Us",
+        //   slug: "contact",
+        //   to: "/",
+        //   redirect: false
+        // }
       ],
       topics: [
         ["Violence Prevention","Depression and Anxiety" , "Psychological Distress", "Educational Equity"],
@@ -186,7 +206,7 @@ export default {
         },
         {
           time: "10:00 AM - 10:45 AM",
-          title: "Panel Discussion: ??",
+          title: "Panel Discussion",
           sub: ""
         },
         {
@@ -196,7 +216,7 @@ export default {
         },
         {
           time: "11:00 AM - 12:00 PM",
-          title: "Presentation 1:",
+          title: "Presentation 1",
           sub: ""
         },
       ],
@@ -207,7 +227,7 @@ export default {
           sub: ""
         },
         {
-          time: "1:00 PM - 1:30 PM pm",
+          time: "1:00 PM - 1:30 PM",
           title: "Speaker 3",
           sub: ""
         },        
