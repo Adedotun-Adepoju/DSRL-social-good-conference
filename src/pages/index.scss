@@ -27,7 +27,7 @@
 
       .text {
         p {
-          color: rgb(4, 64, 42);;
+          color: rgb(4, 64, 42);
           margin-bottom: 2px;
           font-size: 0.8vw;
           font-weight: bold;
@@ -255,40 +255,43 @@
       }
     }
   }
+}
 
-  .contacts-section{
-    background-color: rgb(79, 184, 108);
-    margin-top: 40px;
-    padding-bottom: 30px;
-    padding-top: 30px;
-    .heading {
-      color:  rgb(4, 64, 42); 
-      font-size: 35px;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .contact-board {
-      border-radius: 10px;
-      justify-content: space-around;
-      display: flex;
-      .contact {
-        // border-right: 3px solid white;
-        // width: 30%;
-        .name {
-          color:  rgb(4, 64, 42); 
-          font-size: 18px;
-        }
-        .email {
-          color:  rgb(4, 64, 42); 
-        }
-        .description {
-          color:  rgb(4, 64, 42); 
-        }
+.contacts-section{
+  background-color: rgb(79, 184, 108);
+  margin-top: 40px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  // margin-left: -3%;
+  // margin-right: -6%;
+  .heading {
+    color:  rgb(4, 64, 42); 
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .contact-board {
+    border-radius: 10px;
+    justify-content: space-around;
+    display: flex;
+    .contact {
+      // border-right: 3px solid white;
+      // width: 30%;
+      .name {
+        color:  rgb(4, 64, 42); 
+        font-size: 18px;
+      }
+      .email {
+        color:  rgb(4, 64, 42); 
+      }
+      .description {
+        color:  rgb(4, 64, 42); 
       }
     }
   }
 }
+
 
 // mobile-view
 @media (max-width: 599px) {
@@ -447,15 +450,21 @@
     }
 
     .sponsors-section {
+      padding-left: 0px;
+      .heading {
+        font-size: 25px;
+      }
       .info {
-        display: block;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         .sponsors {
-          width: 100%;
-          padding: 0 25% 0 25%;
+          // width: 20%;
+          flex-basis: 33%;
           // border: 1px solid red;
           .logo{
-            max-width: 150px;
-            max-height: 150px;
+            max-width: 100px;
+            max-height: 100px;
             width: auto;
             height: auto;
             margin-bottom: 30px;

@@ -60,12 +60,12 @@ export const sponsors = [
     name: "Morgan State University",
     img_link: "img/sponsors/msu.png",
     url: "https://www.morgan.edu/",
-    marginTop: "50px"
+    marginTop: "15%"
   },
   {
     name: "WIDS",
     img_link: "img/sponsors/wids.png",
     url: "https://www.widsworldwide.org/",
-    marginTop: "100px"
+    marginTop: "25%"
   }
 ]

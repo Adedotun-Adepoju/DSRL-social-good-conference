@@ -38,16 +38,19 @@
       <p class="section-header">Coordination</p>
       <ul class="list">
         <li class="chair">Radhouane Chouchane, Conference Chair</li>
+        <p class="affiliation"> Morgan State University</p>
         <a href="mailto:radwan.shushane@morgan.edu" target="_blank" rel="noopener noreferrer">
-          <q-icon name="email" size="sm" color="white"/>
+          <q-icon name="email" size="sm" color="black"/>
         </a>
         <li class="chair">Amml Hussein, Conference Co-Chair</li>
+        <p class="affiliation"> Council on Social Work Education</p>
         <a href="mailto:ahussein@cswe.org" target="_blank" rel="noopener noreferrer">
-          <q-icon name="email" size="sm" color="white"/>
+          <q-icon name="email" size="sm" color="black"/>
         </a>
         <li class="chair">Juan A Rios, Conference Co-Chair</li>
+        <p class="affiliation">Seton Hall University</p>
         <a href="mailto:juan.rios@shu.edu" target="_blank" rel="noopener noreferrer">
-          <q-icon name="email" size="sm" color="white"/>
+          <q-icon name="email" size="sm" color="black"/>
         </a>
       </ul>
     </div>
@@ -55,17 +58,61 @@
       <p class="section-header">Committee Members</p>
       <ul class="list">
         <li class="chair">Amjad Ali </li>
+        <p class="affiliation">Morgan State University</p>
+        <a href="mailto:amjad.ali@morgan.edu" target="_blank" rel="noopener noreferrer">
+          <q-icon name="email" size="sm" color="black"/>
+        </a>
+
         <li class="chair">Maggie Cherry</li>
+        <p class="affiliation">Health Equity Clinical Specialist at Google</p>
+        <a href="mailto:drmchery@gmail.com" target="_blank" rel="noopener noreferrer">
+          <q-icon name="email" size="sm" color="black"/>
+        </a>
+
         <li class="chair">Priscilla Carmona</li>
+        <p class="affiliation">Phd Student Reentry and Restorative Justice</p>
+        <a href="mailto:priscilla.carmona1@fordham.edu" target="_blank" rel="noopener noreferrer">
+          <q-icon name="email" size="sm" color="black"/>
+        </a>
+
         <li class="chair">Yesem Peker</li>
+        <p class="affiliation">Columbus State University</p>
+        <a href="mailto:peker_yesem@columbusstate.edu" target="_blank" rel="noopener noreferrer">
+          <q-icon name="email" size="sm" color="black"/>
+        </a>
+
         <li class="chair">Lydia Ray</li>
+        <p class="affiliation">Columbus State University</p>
+        <a href="mailto:ray_lydia@columbusstate.edu" target="_blank" rel="noopener noreferrer">
+          <q-icon name="email" size="sm" color="black"/>
+        </a>
+
         <li class="chair">Lixin Wang</li>
+        <p class="affiliation">Columbus State University</p>
+        <a href="mailto:wang_lixin@columbusstate.edu" target="_blank" rel="noopener noreferrer">
+          <q-icon name="email" size="sm" color="black"/>
+        </a>
+
         <li class="chair">Rania Hodhod </li>
+        <p class="affiliation">Columbus State University</p>
+        <a href="mailto:hodhod_rania@columbusstate.edu" target="_blank" rel="noopener noreferrer">
+          <q-icon name="email" size="sm" color="black"/>
+        </a>
+
         <li class="chair">Bezaleel Akinbami</li>
+        <p class="affiliation">Data Science Research Lab, Morgan State University</p>
+
         <li class="chair">Dapiriye Briggs</li>
+        <p class="affiliation">Data Science Research Lab, Morgan State University</p>
+
         <li class="chair">Clyde Baidoo</li>
+        <p class="affiliation">Data Science Research Lab, Morgan State University</p>
+
         <li class="chair">Caleb Kadiri</li>
+        <p class="affiliation">Data Science Research Lab, Morgan State University</p>
+
         <li class="chair">Adedotun Adepoju</li>
+        <p class="affiliation">Data Science Research Lab, Morgan State University</p>
       </ul>
     </div>
   </div>
@@ -86,8 +133,8 @@ export default {
       activeTab: "Committee",
       navItems: [
         {
-          name: "Home",
-          slug: "home",
+          name: "About",
+          slug: "about",
           to: "/",
           redirect: false
         },
@@ -98,7 +145,7 @@ export default {
           redirect: false
         },
         {
-          name: "Agenda",
+          name: "Program",
           slug: "agenda",
           to: "",
           redirect: false
@@ -109,12 +156,12 @@ export default {
           to: "/committee",
           redirect: true
         },
-        {
-          name: "Contact Us",
-          slug: "contact",
-          to: "/",
-          redirect: false
-        }
+        // {
+        //   name: "Register",
+        //   slug: "register",
+        //   to: "/",
+        //   redirect: false
+        // }
       ],
     }
   },

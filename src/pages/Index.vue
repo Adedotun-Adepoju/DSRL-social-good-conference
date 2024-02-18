@@ -1,132 +1,134 @@
 <template>
-<div class="main-container">
-  <div class="navigation">
-    <div class="conference-logo">
-      <div class="rectangle">
-        <p>Data</p>
+<div>
+  <div class="main-container">
+    <div class="navigation">
+      <div class="conference-logo">
+        <div class="rectangle">
+          <p>Data</p>
+        </div>
+        <div class="text">
+          <p>Science</p>
+          <p>Conference</p>
+        </div>
       </div>
-      <div class="text">
-        <p>Science</p>
-        <p>Conference</p>
+      <div class="menu-icon">
+        <q-icon name="menu" size="md" class="icon" color="black">
+          <q-menu>
+            <q-list>
+              <q-item clickable v-close-popup v-for="(item, keys) in navItems" :key="keys" @click="navItemClick(item)">
+                <q-item-section>{{ item.name }}</q-item-section>
+              </q-item>
+            </q-list>
+          </q-menu>
+        </q-icon>
       </div>
-    </div>
-    <div class="menu-icon">
-      <q-icon name="menu" size="md" class="icon" color="black">
-        <q-menu>
-          <q-list>
-            <q-item clickable v-close-popup v-for="(item, keys) in navItems" :key="keys" @click="navItemClick(item)">
-              <q-item-section>{{ item.name }}</q-item-section>
-            </q-item>
-          </q-list>
-        </q-menu>  
-      </q-icon>
-    </div>
-    <div class="nav-items">
-      <p
-        v-for="(item, key) in navItems"
-        :key="key"
-        :class="`nav-item ${item.name == activeTab ? 'active-tab' : ''}`"
-        @click="navItemClick(item)"
-      >
-        {{ item.name }}
-      </p>
-    </div>
-  </div>
-  <div class="title-section">
-    <div class="body">
-      <p class="title">Data Science For Social Work Conference</p>
-      <p class="sub-title"><span>Morgan State University</span> @ 212 University Student Center</p>
-      <!-- <p class="sub-title">1700 East Cold Spring Lane, Baltimore, Maryland 21251</p> -->
-      <p class="date">May 3, 2024</p>
-    </div>
-  </div>
-  <div class="about-section">
-    <div class="topics">
-      <div v-for="(item, key) in topics" :key="key" class="topic-container">
-        <ul v-for="(topic,index) in item" :key="'a' + index">
-          <li class="topic">{{ topic }}</li>
-        </ul>
-      </div>
-    </div>
-    <div class="details">
-      <!-- <p class="about">About the Conference</p>   -->
-      <p class="description">Practitioner/Scholar Collaboration to Localize Addressing Social Problems, mainly with the help of Data Science, in the NJ Metro and the Baltimore/DC area.</p>
-    </div>
-  </div>
-  <div class="speakers-section" id="speakers">
-    <p class="heading">Speakers</p>
-    <div class="speaker-tiles">
-      <template v-for="(person, key) in speakers">
-        <SpeakerCard
+      <div class="nav-items">
+        <p
+          v-for="(item, key) in navItems"
           :key="key"
-          :name="person.name"
-          :title="person.title"
-          :leftMargin="person.left_margin"
-          class="speaker-card"
-        />
-      </template>
+          :class="`nav-item ${item.name == activeTab ? 'active-tab' : ''}`"
+          @click="navItemClick(item)"
+        >
+          {{ item.name }}
+        </p>
+      </div>
     </div>
-  </div>
-  <div class="agenda-section" id="agenda">
-    <p class="heading">Agenda</p>
-    <div class="program">
-      <div class="session-container">
-        <p class="session">Morning Session</p>
-        <div 
-          v-for="(item, index) in morningAgenda" 
-          :key="index" 
-          :class="`schedule ${index % 2 == 0 ? 'background' : ''}`">
-          <p class="time">{{ item.time }}</p>
-          <!-- <hr> -->
-          <div class="item">
-            <p class="title">{{ item.title }}</p>
-            <p class="sub">{{ item.sub }}</p>
+    <div class="title-section">
+      <div class="body">
+        <p class="title">Data Science For Social Work Conference</p>
+        <p class="sub-title"><span>Morgan State University</span> @ 212 University Student Center</p>
+        <!-- <p class="sub-title">1700 East Cold Spring Lane, Baltimore, Maryland 21251</p> -->
+        <p class="date">May 3, 2024</p>
+      </div>
+    </div>
+    <div class="about-section">
+      <div class="topics">
+        <div v-for="(item, key) in topics" :key="key" class="topic-container">
+          <ul v-for="(topic,index) in item" :key="'a' + index">
+            <li class="topic">{{ topic }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="details">
+        <!-- <p class="about">About the Conference</p>   -->
+        <p class="description">Practitioner/Scholar Collaboration to Localize Addressing Social Problems, mainly with the help of Data Science, in the NJ Metro and the Baltimore/DC area.</p>
+      </div>
+    </div>
+    <div class="speakers-section" id="speakers">
+      <p class="heading">Speakers</p>
+      <div class="speaker-tiles">
+        <template v-for="(person, key) in speakers">
+          <SpeakerCard
+            :key="key"
+            :name="person.name"
+            :title="person.title"
+            :leftMargin="person.left_margin"
+            class="speaker-card"
+          />
+        </template>
+      </div>
+    </div>
+    <div class="agenda-section" id="agenda">
+      <p class="heading">Agenda</p>
+      <div class="program">
+        <div class="session-container">
+          <p class="session">Morning Session</p>
+          <div
+            v-for="(item, index) in morningAgenda"
+            :key="index"
+            :class="`schedule ${index % 2 == 0 ? 'background' : ''}`">
+            <p class="time">{{ item.time }}</p>
+            <!-- <hr> -->
+            <div class="item">
+              <p class="title">{{ item.title }}</p>
+              <p class="sub">{{ item.sub }}</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="session-container">
-        <p class="session">Afternoon Session</p>
-        <div 
-          v-for="(item, index) in afternoonAgenda" 
-          :key="'a' + index" 
-          :class="`schedule ${index % 2 == 0 ? 'background' : ''}`">
-          <p class="time">{{ item.time }}</p>
-          <div class="item">
-            <p class="title">{{ item.title }}</p>
-            <p class="sub">{{ item.sub }}</p>
+        <div class="session-container">
+          <p class="session">Afternoon Session</p>
+          <div
+            v-for="(item, index) in afternoonAgenda"
+            :key="'a' + index"
+            :class="`schedule ${index % 2 == 0 ? 'background' : ''}`">
+            <p class="time">{{ item.time }}</p>
+            <div class="item">
+              <p class="title">{{ item.title }}</p>
+              <p class="sub">{{ item.sub }}</p>
+            </div>
           </div>
         </div>
+          </div>
       </div>
+    <div class="sponsors-section">
+      <p class="heading">Sponsors</p>
+      <div class="info">
+        <div
+          v-for="(item, index) in sponsors"
+          :key="index"
+          class="sponsors"
+          @click="goToSponsorPage(item.url)"
+        >
+          <img :src="item.img_link"
+            class="logo"
+            :style="{ marginTop: `${item.marginTop}` }"
+          />
         </div>
-    </div>
-  <div class="sponsors-section">
-    <p class="heading">Sponsors</p>
-    <div class="info">
-      <div 
-        v-for="(item, index) in sponsors" 
-        :key="index" 
-        class="sponsors"
-        @click="goToSponsorPage(item.url)"
-      >
-        <img :src="item.img_link" 
-          class="logo"
-          :style="{ marginTop: `${item.marginTop}` }"
-        />
       </div>
     </div>
   </div>
-  <div class="contacts-section" id="contact">
-    <p class="heading">Contact Us</p>
-    <div class="contact-board">
-      <div v-for="(contact, index) in contacts" :key="index" class="contact">
-        <p class="name">{{ contact.name }}</p>
-        <p class="description">Coordinator</p>
-        <a href="mailto:radwan.shushane@morgan.edu" target="_blank" rel="noopener noreferrer">
-          <q-icon name="email" size="sm" color="white"/>
-        </a>
+    <div class="contacts-section" id="contact">
+      <p class="heading">Contact Us</p>
+      <div class="contact-board">
+        <div v-for="(contact, index) in contacts" :key="index" class="contact">
+          <p class="name">{{ contact.name }}</p>
+          <p class="description">Coordinator</p>
+          <a href="mailto:radwan.shushane@morgan.edu" target="_blank" rel="noopener noreferrer">
+            <q-icon name="email" size="sm" color="white"/>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
 </div>
 </template>
 
@@ -169,12 +171,12 @@ export default {
           to: "/committee",
           redirect: true
         },
-        {
-          name: "Register",
-          slug: "register",
-          to: "/committee",
-          redirect: true
-        },
+        // {
+        //   name: "Register",
+        //   slug: "register",
+        //   to: "/committee",
+        //   redirect: true
+        // },
         // {
         //   name: "Contact Us",
         //   slug: "contact",
