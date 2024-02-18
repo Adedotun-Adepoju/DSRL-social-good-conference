@@ -1,9 +1,9 @@
 <template>
   <div class="main-container">
     <div class="speaker-wrapper">
-      <div class="circular-image">
+      <!-- <div class="circular-image"> -->
         <!-- <img :src="image" :style="{ marginLeft: `${leftMargin}` }"/> -->
-      </div>
+      <!-- </div> -->
     </div>
     <div class="info">
       <p class="name">{{ name }}</p>

@@ -52,12 +52,20 @@ export const speakers = [
 export const sponsors = [
   {
     name: "Data Science Research Lab",
-    img_link: "img/people/lab-logo.jpeg",
-    url: "https://msu-dsrl-website.vercel.app/#/"
+    img_link: "img/sponsors/lab-logo.png",
+    url: "https://msu-dsrl-website.vercel.app/#/",
+    marginTop: 0
   },
   {
     name: "Morgan State University",
-    img_link: "img/people/msu.png",
-    url: "https://www.morgan.edu/"
+    img_link: "img/sponsors/msu.png",
+    url: "https://www.morgan.edu/",
+    marginTop: "15%"
+  },
+  {
+    name: "WIDS",
+    img_link: "img/sponsors/wids.png",
+    url: "https://www.widsworldwide.org/",
+    marginTop: "25%"
   }
 ]

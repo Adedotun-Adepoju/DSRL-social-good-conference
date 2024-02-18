@@ -1,6 +1,6 @@
 .main-container {
   // background-color: #10121E;
-  background-color: BLACK;
+  background-color: white;
   padding: 50px 20% 50px 20%;
   .navigation {
     display: flex;
@@ -12,7 +12,7 @@
       flex-direction: row;
       gap: 10px;
       .rectangle {
-        background-color: white;
+        background-color: rgb(4, 64, 42);
         padding-bottom: 0px;
         padding: 12px 5px 0px 5px;
         p {
@@ -20,12 +20,13 @@
           text-transform: uppercase;
           font-weight: bold;
           margin: 0px;
+          color: white;
         }
       }
 
       .text {
         p {
-          color: white;
+          color: rgb(4, 64, 42);
           margin-bottom: 2px;
           font-size: 0.8vw;
           font-weight: bold;
@@ -38,12 +39,12 @@
     }
 
     .nav-items {
-      width: 60%;
+      width: 40%;
       display: flex;
       justify-content: space-between;
       padding-top: 8px;
       .nav-item {
-        color: white;
+        color: rgb(4, 64, 42);
         font-weight: bold;
         font-size: 1vw;
         cursor: pointer;
@@ -54,7 +55,7 @@
       }
 
       .active-tab {
-        color:#FDC030;;
+        color:rgb(4, 64, 42);
         font-weight: bold;
       }
     }
@@ -63,19 +64,24 @@
   .body {
     margin-top: 100px;
     .heading {
-      color: white;
+      color:rgb(4, 64, 42);
       font-size: 30px;
       text-align: center;
     }
     .title {
       .section-header {
-        color: #FDC030;
+        color:rgb(4, 64, 42);
         font-size: 20px;
         margin-top: 40px;
+        font-weight: bold;
       }
       .list {
+        .affiliation {
+          color: rgb(4, 64, 42);
+          font-size: 18px;
+        }
         .chair {
-          color: white;
+          color:rgb(4, 64, 42);
           font-size: 20px;
           margin-top: 20px;
           margin-bottom: 10px;
